@@ -16,6 +16,10 @@
 		0473CCC02990372D00A2B0DC /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0473CCBF2990372D00A2B0DC /* UserInfoViewController.swift */; };
 		0473CCC22990374A00A2B0DC /* MoreDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0473CCC12990374A00A2B0DC /* MoreDetailsViewController.swift */; };
 		0473CCC42990375C00A2B0DC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0473CCC32990375C00A2B0DC /* UserModel.swift */; };
+		048451232992AC8A00863CA8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048451222992AC8A00863CA8 /* LoginViewModel.swift */; };
+		048451262992ACB200863CA8 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048451252992ACB200863CA8 /* WelcomeViewModel.swift */; };
+		048451292992ACD400863CA8 /* UserInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048451282992ACD400863CA8 /* UserInfoViewModel.swift */; };
+		0484512C2992ACFA00863CA8 /* MoreDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0484512B2992ACFA00863CA8 /* MoreDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		0473CCBF2990372D00A2B0DC /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		0473CCC12990374A00A2B0DC /* MoreDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailsViewController.swift; sourceTree = "<group>"; };
 		0473CCC32990375C00A2B0DC /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		048451222992AC8A00863CA8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		048451252992ACB200863CA8 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
+		048451282992ACD400863CA8 /* UserInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewModel.swift; sourceTree = "<group>"; };
+		0484512B2992ACFA00863CA8 /* MoreDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,16 +72,60 @@
 			children = (
 				0473CCA9299031A000A2B0DC /* AppDelegate.swift */,
 				0473CCAB299031A000A2B0DC /* SceneDelegate.swift */,
-				0473CCAD299031A000A2B0DC /* LoginViewController.swift */,
-				0473CCBD2990371A00A2B0DC /* WelcomeViewController.swift */,
-				0473CCBF2990372D00A2B0DC /* UserInfoViewController.swift */,
-				0473CCC12990374A00A2B0DC /* MoreDetailsViewController.swift */,
-				0473CCC32990375C00A2B0DC /* UserModel.swift */,
+				048451212992AC6700863CA8 /* Login */,
+				048451242992AC9400863CA8 /* Welcome */,
+				048451272992ACBA00863CA8 /* UserInfo */,
+				0484512A2992ACDD00863CA8 /* MoreDetails */,
+				048451202992AC4200863CA8 /* Models */,
 				0473CCB2299031A300A2B0DC /* Assets.xcassets */,
 				0473CCB4299031A300A2B0DC /* LaunchScreen.storyboard */,
 				0473CCB7299031A300A2B0DC /* Info.plist */,
 			);
 			path = LoginWithoutStoryboards4;
+			sourceTree = "<group>";
+		};
+		048451202992AC4200863CA8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0473CCC32990375C00A2B0DC /* UserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		048451212992AC6700863CA8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0473CCAD299031A000A2B0DC /* LoginViewController.swift */,
+				048451222992AC8A00863CA8 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		048451242992AC9400863CA8 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				0473CCBD2990371A00A2B0DC /* WelcomeViewController.swift */,
+				048451252992ACB200863CA8 /* WelcomeViewModel.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		048451272992ACBA00863CA8 /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				0473CCBF2990372D00A2B0DC /* UserInfoViewController.swift */,
+				048451282992ACD400863CA8 /* UserInfoViewModel.swift */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		0484512A2992ACDD00863CA8 /* MoreDetails */ = {
+			isa = PBXGroup;
+			children = (
+				0473CCC12990374A00A2B0DC /* MoreDetailsViewController.swift */,
+				0484512B2992ACFA00863CA8 /* MoreDetailsViewModel.swift */,
+			);
+			path = MoreDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,10 +199,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0473CCC22990374A00A2B0DC /* MoreDetailsViewController.swift in Sources */,
+				0484512C2992ACFA00863CA8 /* MoreDetailsViewModel.swift in Sources */,
+				048451262992ACB200863CA8 /* WelcomeViewModel.swift in Sources */,
 				0473CCC42990375C00A2B0DC /* UserModel.swift in Sources */,
 				0473CCAE299031A000A2B0DC /* LoginViewController.swift in Sources */,
 				0473CCBE2990371A00A2B0DC /* WelcomeViewController.swift in Sources */,
+				048451232992AC8A00863CA8 /* LoginViewModel.swift in Sources */,
 				0473CCC02990372D00A2B0DC /* UserInfoViewController.swift in Sources */,
+				048451292992ACD400863CA8 /* UserInfoViewModel.swift in Sources */,
 				0473CCAA299031A000A2B0DC /* AppDelegate.swift in Sources */,
 				0473CCAC299031A000A2B0DC /* SceneDelegate.swift in Sources */,
 			);
