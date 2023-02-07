@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0415B2E6299042B60010833F /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415B2E5299042B60010833F /* CustomTabBarController.swift */; };
 		0473CCAA299031A000A2B0DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0473CCA9299031A000A2B0DC /* AppDelegate.swift */; };
 		0473CCAC299031A000A2B0DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0473CCAB299031A000A2B0DC /* SceneDelegate.swift */; };
 		0473CCAE299031A000A2B0DC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0473CCAD299031A000A2B0DC /* LoginViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0415B2E5299042B60010833F /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		0473CCA6299031A000A2B0DC /* LoginWithoutStoryboards4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginWithoutStoryboards4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0473CCA9299031A000A2B0DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0473CCAB299031A000A2B0DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			children = (
 				0473CCA9299031A000A2B0DC /* AppDelegate.swift */,
 				0473CCAB299031A000A2B0DC /* SceneDelegate.swift */,
+				0415B2E5299042B60010833F /* CustomTabBarController.swift */,
 				0473CCAD299031A000A2B0DC /* LoginViewController.swift */,
 				0473CCBD2990371A00A2B0DC /* WelcomeViewController.swift */,
 				0473CCBF2990372D00A2B0DC /* UserInfoViewController.swift */,
@@ -148,6 +151,7 @@
 			files = (
 				0473CCC22990374A00A2B0DC /* MoreDetailsViewController.swift in Sources */,
 				0473CCC42990375C00A2B0DC /* UserModel.swift in Sources */,
+				0415B2E6299042B60010833F /* CustomTabBarController.swift in Sources */,
 				0473CCAE299031A000A2B0DC /* LoginViewController.swift in Sources */,
 				0473CCBE2990371A00A2B0DC /* WelcomeViewController.swift in Sources */,
 				0473CCC02990372D00A2B0DC /* UserInfoViewController.swift in Sources */,
