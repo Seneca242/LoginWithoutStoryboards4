@@ -131,7 +131,11 @@ class CustomTabBarController: UIViewController {
         tabBarItemsStackView.trailingAnchor.constraint(equalTo: tabBar.trailingAnchor).isActive = true
     }
     
-    private func customizeTabBarItem(at selectedIndex: Int){
+    private func customizeTabBarItem(at selectedIndex: Int) {
+        guard !viewControllers.isEmpty else {
+            assertionFailure("пустой массив VCs")
+            return
+        }
         for i in 0...viewControllers.count-1 {
             let button = tabBarItemsStackView.arrangedSubviews[i] as! UIButton
             let vc = viewControllers[i]
@@ -148,7 +152,9 @@ class CustomTabBarController: UIViewController {
   
     public func layoutTabBar(_ tabBar: TabBar){
         tabBar.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        tabBar.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        tabBar.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40).isActive = true
+        tabBar.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
+        tabBar.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16).isActive = true
     }
     
     @objc func tabBarItemTapped(_ sender: UIButton) {

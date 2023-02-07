@@ -186,21 +186,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 //            welcomeVC.modalPresentationStyle = .fullScreen
 //            present(welcomeVC, animated: true)
             
-            let tabbar = UITabBarController()
-            tabbar.tabBar.backgroundColor = .white
-            welcomeVC.tabBarItem = .init(
-                title: "drink",
-                image: UIImage(named: "drink"),
-//                tag: 0
-                selectedImage: UIImage(named: "brain")
-            )
-            navigationUserInfoVC.tabBarItem = .init(
-                title: "hammer",
-                image: UIImage(named: "hammer"),
-                selectedImage: UIImage(named: "brain")
-            )
-            tabbar.modalPresentationStyle = .fullScreen
+//            let tabbar = UITabBarController()
+
+            let tabbar = CustomTabBarController()
+
+            welcomeVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "trash"), selectedImage: UIImage(systemName: "trash.fill"))
+            userInfoVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
+
+            //1
             tabbar.viewControllers = [welcomeVC, navigationUserInfoVC]
+            
+            //2
+            tabbar.tabBar.size = CGSize(width: 300, height: 60)
+            tabbar.tabBar.layer.cornerRadius = 30
+            tabbar.tabBar.backgroundColor = .systemCyan
+            tabbar.tintColor = .black
             
             present(tabbar, animated: true)
         }
