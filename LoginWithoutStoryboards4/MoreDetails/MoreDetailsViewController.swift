@@ -9,11 +9,12 @@ import UIKit
 
 class MoreDetailsViewController: UIViewController {
 
+    var viewModel: MoreDetailsViewModelProtocol!
     var person: User?
     
     private lazy var senecaPhoto: UIImageView = {
         var image = UIImageView()
-        image.image = UIImage(named: person?.person?.personPhoto ?? "")
+        image.image = UIImage(named: viewModel.image)
         image.backgroundColor = .orange
         image.contentMode = .scaleAspectFill
         return image

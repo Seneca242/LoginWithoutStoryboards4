@@ -9,7 +9,8 @@ import UIKit
 
 class UserInfoViewController: UIViewController {
 
-    var person: User?
+    var viewModel: UserInfoViewModelProtocol!
+//    var person: User?
     var delegate: RemoveTextFromTF?
     
     private lazy var scrollView: UIScrollView = {
@@ -29,7 +30,7 @@ class UserInfoViewController: UIViewController {
     
     private lazy var personStoryLabel: UILabel = {
         let label = UILabel()
-        label.text = person?.person?.personStory
+        label.text = viewModel.personStory
         label.backgroundColor = .black
         label.font = UIFont(name: "Arial", size: 14)
         label.textColor = .white
@@ -53,7 +54,7 @@ class UserInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "\(person?.person?.name ?? "") \(person?.person?.lastName ?? "")"
+        title = viewModel.NavigationBarTitle
         view.backgroundColor = .red
         addSubviews(subViews: scrollView)
         scrollView.addSubview(contentView)
@@ -112,7 +113,7 @@ class UserInfoViewController: UIViewController {
         let moreDetailsVC = MoreDetailsViewController()
 //        let navigationMoreDetailsVC = UINavigationController(rootViewController: moreDetailsVC)
         
-        moreDetailsVC.person = person
+//        moreDetailsVC.person = person
 //        navigationMoreDetailsVC.modalPresentationStyle = .fullScreen
 //        present(navigationMoreDetailsVC, animated: true)
         navigationController?.pushViewController(moreDetailsVC, animated: true)
