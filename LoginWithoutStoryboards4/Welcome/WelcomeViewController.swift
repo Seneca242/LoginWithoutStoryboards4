@@ -7,9 +7,23 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: UIViewController, ViewModelBased {
+    
+    typealias ViewModelType = WelcomeViewModel
+
+    var viewModel: WelcomeViewModel
+    
+    required init(viewModel: WelcomeViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
 
     weak var delegate: RemoveTextFromTF?
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     private lazy var welcomeLabel: UILabel = {
         let label = UILabel()
@@ -40,8 +54,6 @@ class WelcomeViewController: UIViewController {
         delegate?.removeTextFromTF()
         dismiss(animated: true)
     }
-    
-    
     
     private func addSubviews(subviews: UIView...) {
         subviews.forEach { subview in

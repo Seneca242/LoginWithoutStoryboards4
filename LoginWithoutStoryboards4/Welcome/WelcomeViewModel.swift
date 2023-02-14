@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+class WelcomeViewModel: ViewModel {
+    
+    private let person: Person
+    
+    init(person: Person) {
+        self.person = person
+    }
+}

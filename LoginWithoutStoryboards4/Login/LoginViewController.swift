@@ -11,10 +11,20 @@ protocol RemoveTextFromTF: AnyObject {
     func removeTextFromTF()
 }
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController, ViewModelBased, UITextFieldDelegate {
 
     let personInfo = User.getUserInfo()
-    var viewModel: LoginViewModelProtocol!
+    
+    var viewModel: LoginViewModel
+    
+    required init(viewModel: LoginViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
@@ -165,10 +175,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func showTabbar() {
-        let welcomeVC = WelcomeViewController()
+        //1 создаем вью-модель и данными
+        let welcomeViewModel = WelcomeViewModel(person: personInfo.person)
+        
+        //2 создаем вью-контроллер с вью-моделью
+        let welcomeVC = WelcomeViewController(viewModel: welcomeViewModel)
+        
+        //3 устанавливаем зависимости
         welcomeVC.delegate = self
+        
+        
+        //view-model??
         let userInfoVC = UserInfoViewController()
-        userInfoVC.person = personInfo
+//        userInfoVC.person = personInfo
         userInfoVC.delegate = self
         
         let navigationUserInfoVC = UINavigationController(rootViewController: userInfoVC)
@@ -196,16 +215,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc private func forgotUserInfo(sender: UIButton) {
-        sender.tag == 0
-        ? showAlert(
-            title: "Ooops",
-            message: "Your User Name is \(personInfo.userName)"
-        )
-        : showAlert(
-            title: "Oooops",
-            message: "Your Password is \(personInfo.password)"
-        )
+        viewModel.forgotUserInfoButtons(tag: sender.tag)
     }
+
 }
 
 extension LoginViewController: RemoveTextFromTF {
@@ -213,7 +225,5 @@ extension LoginViewController: RemoveTextFromTF {
         userNameTF.text = ""
         passwordTF.text = ""
     }
-    
-    
 }
 

@@ -17,11 +17,11 @@ protocol UserInfoViewModelProtocol {
 
 class UserInfoViewModel: UserInfoViewModelProtocol {
     var NavigationBarTitle: String {
-        "\(user.person?.name ?? "") \(user.person?.lastName ?? "")"
+        "\(user.person.name) \(user.person.lastName)"
     }
     
     var personStory: String {
-        user.person?.personStory ?? ""
+        user.person.personStory
     }
     
     private let user: User

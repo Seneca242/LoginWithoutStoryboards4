@@ -10,7 +10,7 @@ import Foundation
 struct User {
     let userName: String
     let password: String
-    let person: Person?
+    let person: Person
     
     static func getUserInfo() -> User {
         User(
